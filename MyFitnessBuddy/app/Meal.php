@@ -10,12 +10,15 @@ class Meal extends Model
   * Attributes that are mass-assignable
   **/
     protected $fillable = ['name'];
-    
+
     public function user(){
       return $this->belongsTo(User::class);
     }
 
     public function foods(){
       return $this->hasMany(Food::class);
+    }
+    public function calories(){
+      return ($this->protein * 4) + ($this->carbohydrates * 4) + ($this->fat * 9);
     }
 }

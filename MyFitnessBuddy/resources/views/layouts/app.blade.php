@@ -28,8 +28,17 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                    <a class="navbar-brand" href="{{ url('/home') }}">
+                        <!-- {{ config('app.name', 'Laravel') }} -->
+                        Meals
+                    </a>
+                    <a class="navbar-brand" href="{{ url('/meals') }}">
+                        <!-- {{ config('app.name', 'Laravel') }} -->
+                        All Meals
+                    </a>
+                    <a class="navbar-brand" href="{{ url('/meals/create') }}">
+                        <!-- {{ config('app.name', 'Laravel') }} -->
+                        Create Meal
                     </a>
                 </div>
 
@@ -75,6 +84,13 @@
     </div>
 
     <!-- Scripts -->
+    <script type="text/javascript">
+      $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+      });
+  </script>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

@@ -4,8 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Meal;
+
+use App\User;
+
 class FoodsController extends Controller
 {
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
     /**
      * Display a listing of the resource.
      *
@@ -32,9 +40,17 @@ class FoodsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, User $user)
     {
-        //
+      // Laravel Validation
+      $this->validate($request,[
+        'name' => 'required'
+      ]);
+      // create new meal taking advantage of the fact that weve set naem mass assignable
+      $food = new Food($request->all());
+      $user->foods()->save($food);
+      // return redirect()->action("FoodsController@show", $food->id);
+
     }
 
     /**
@@ -45,7 +61,8 @@ class FoodsController extends Controller
      */
     public function show($id)
     {
-        //
+      $food = Food::find($id);
+      return view('meals.show', compact('food'));
     }
 
     /**

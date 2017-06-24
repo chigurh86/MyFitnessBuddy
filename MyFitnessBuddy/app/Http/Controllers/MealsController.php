@@ -44,6 +44,7 @@ class MealsController extends Controller
      */
     public function store(Request $request, User $user)
     {
+      // Laravel Validation
       $this->validate($request,[
         'name' => 'required'
       ]);
@@ -62,9 +63,8 @@ class MealsController extends Controller
      */
     public function show($id)
     {
-        //debug would be
-        // echo $id;
-        // return view ('meals.show')->withMeal(Meal::find($id)); would work Too
+        $meal = Meal::find($id);
+        return view('meals.show', compact('meal'));
 
     }
 
