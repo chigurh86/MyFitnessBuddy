@@ -1,0 +1,16 @@
+nav{
+  background-color: #DD4814 !important;
+  font-family: 'arial' !important;
+}
+nav a:hover{
+  background-color: #bf3e11 !important;
+}
+.navbar-brand{
+  color: #fff !important;
+}
+.dropdown-toggle{
+  color: #fff !important;
+}
+.subguys{
+  font-size: 15px !important;
+}

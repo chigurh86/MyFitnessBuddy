@@ -9,7 +9,7 @@
                   <ul class="list-group">
                     @foreach ($meals as $meal)
                     <li class="list-group-item">
-                      {{ $meal->name }}
+                      <a href="meals/{{$meal->id}}">{{ $meal->name }}</a>
                       <span style="float:right;">{{ $meal->created_at }}</span>
                     </li>
                     @endforeach
@@ -17,8 +17,6 @@
                 @else
                 <h5>You have no meals <a href="/meals/create">Create Meal Now!</a></h5>
                 @endif
-                <div class="panel-body">
-                </div>
             </div>
         </div>
     </div>

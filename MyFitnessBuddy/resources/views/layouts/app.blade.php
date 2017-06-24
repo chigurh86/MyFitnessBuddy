@@ -12,6 +12,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
@@ -28,17 +30,21 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/home') }}">
+                    <a class="navbar-brand" href="{{ url('/welcome') }}">
                         <!-- {{ config('app.name', 'Laravel') }} -->
-                        Meals
+                        FITNESS BUDDY
                     </a>
-                    <a class="navbar-brand" href="{{ url('/meals') }}">
+                    <a class="navbar-brand subguys" href="{{ url('/home') }}">
+                        <!-- {{ config('app.name', 'Laravel') }} -->
+                        Home
+                    </a>
+                    <a class="navbar-brand subguys" href="{{ url('/meals/create') }}">
+                        <!-- {{ config('app.name', 'Laravel') }} -->
+                        Add Meal
+                    </a>
+                    <a class="navbar-brand subguys" href="{{ url('/meals') }}">
                         <!-- {{ config('app.name', 'Laravel') }} -->
                         All Meals
-                    </a>
-                    <a class="navbar-brand" href="{{ url('/meals/create') }}">
-                        <!-- {{ config('app.name', 'Laravel') }} -->
-                        Create Meal
                     </a>
                 </div>
 

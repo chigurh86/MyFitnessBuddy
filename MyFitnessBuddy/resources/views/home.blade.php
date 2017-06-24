@@ -5,20 +5,20 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Welcome {{Auth::user()->name}}</div>
                 <div class="panel-body">
-                    @if(!$meals->isEmpty())
-                      <ul class="list-group">
-                        @foreach ($meals as $meal)
-                        <li class="list-group-item">
-                          {{ $meal->name }}
-                          <span style="float:right;">{{ $meal->created_at }}</span>
-                        </li>
-                        @endforeach
-                      </ul>
-                    @else
-                    <h5>You have no meals <a href="/meals/create">Create Meal Now!</a></h5>
-                    @endif
+                  @if(!$meals->isEmpty())
+                    <ul class="list-group">
+                      @foreach ($meals as $meal)
+                      <li class="list-group-item">
+                        <a href="meals/{{$meal->id}}">{{ $meal->name }}</a>
+                        <span style="float:right;">{{ $meal->created_at }}</span>
+                      </li>
+                      @endforeach
+                    </ul>
+                  @else
+                  <h5>You have no meals <a href="/meals/create">Create Meal Now!</a></h5>
+                  @endif
                 </div>
             </div>
         </div>

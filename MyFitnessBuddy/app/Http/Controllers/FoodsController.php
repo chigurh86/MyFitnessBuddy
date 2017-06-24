@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Meal;
 
+use App\Food;
+
 use App\User;
 
 class FoodsController extends Controller
@@ -40,7 +42,7 @@ class FoodsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, User $user)
+    public function store(Request $request, Meal $meal)
     {
       // Laravel Validation
       $this->validate($request,[
@@ -48,8 +50,8 @@ class FoodsController extends Controller
       ]);
       // create new meal taking advantage of the fact that weve set naem mass assignable
       $food = new Food($request->all());
-      $user->foods()->save($food);
-      // return redirect()->action("FoodsController@show", $food->id);
+      $meal->foods()->save($food);
+      return redirect()->action("MealsController@show", $meal->id);
 
     }
 
