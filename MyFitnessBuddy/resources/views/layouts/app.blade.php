@@ -30,7 +30,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/welcome') }}">
+                    <a class="navbar-brand" href="{{ url('/home') }}">
                         <!-- {{ config('app.name', 'Laravel') }} -->
                         FITNESS BUDDY
                     </a>

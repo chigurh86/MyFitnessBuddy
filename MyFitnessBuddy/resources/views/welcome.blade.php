@@ -71,23 +71,21 @@
                     @if (Auth::check())
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
+                        <!-- <a href="{{ url('/login') }}">Login</a>
+                        <a href="{{ url('/register') }}">Register</a> -->
                     @endif
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Meals
-                </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <p>My Fitness Buddy</p>
+                  
+                  <span style="font-size:34px;">
+                    <a  style="font-size:34px;" href="{{ url('/login') }}">Login</a> or
+                    <a  style="font-size:34px;" href="{{ url('/register') }}">Register</a> here
+                  </span>
                 </div>
             </div>
         </div>
